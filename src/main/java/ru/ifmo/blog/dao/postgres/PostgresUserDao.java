@@ -9,7 +9,7 @@ import java.util.Optional;
 public class PostgresUserDao implements UserDao {
 
     private static final String TABLE_NAME = "users";
-    private static final String SEQUENCE_NAME = "users_id_sid";
+    private static final String SEQUENCE_NAME = "users_id_seq";
     private static final String COLUMNS = "id, name, login, password, created_at, age";
     private static final String[] COLS = COLUMNS.split(", ");
 
@@ -37,6 +37,12 @@ public class PostgresUserDao implements UserDao {
                     pstmt.setString(4, user.getPassword());
                     pstmt.setTimestamp(5, Timestamp.valueOf(user.getCreatedAt()));
                     pstmt.setInt(6, user.getAge());
+
+                    pstmt.setString(7, user.getName());
+                    pstmt.setString(8, user.getLogin());
+                    pstmt.setString(9, user.getPassword());
+                    pstmt.setTimestamp(10, Timestamp.valueOf(user.getCreatedAt()));
+                    pstmt.setInt(11, user.getAge());
 
                     pstmt.executeUpdate();
 
@@ -119,7 +125,7 @@ public class PostgresUserDao implements UserDao {
         return true;
     }
 
-    private Long nextId() throws SQLException {
+    private long nextId() throws SQLException {
         try (Statement stmt = connection.createStatement()) {
             try (ResultSet rs = stmt.executeQuery(String.format("select nextval('%s')", SEQUENCE_NAME))) {
                 rs.next();

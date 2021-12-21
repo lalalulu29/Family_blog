@@ -10,7 +10,7 @@
 //
 //public class PostgresCommentDao implements CommentDao {
 //    private static final String TABLE_NAME = "comments";
-//    private static final String SEQUENCE_NAME = "comments_id_sid";
+//    private static final String SEQUENCE_NAME = "comments_id_seq";
 //    private static final String COLUMNS = "id, post_id, author_id, content, created_at";
 //    private static final String[] COLS = COLUMNS.split(", ");
 //

@@ -10,7 +10,7 @@
 //
 //public class PostgresPostDao implements PostDao {
 //    private static final String TABLE_NAME = "posts";
-//    private static final String SEQUENCE_NAME = "posts_id_sid";
+//    private static final String SEQUENCE_NAME = "posts_id_seq";
 //    private static final String COLUMNS = "id, author_id, created_at, title, content";
 //    private static final String[] COLS = COLUMNS.split(", ");
 //
