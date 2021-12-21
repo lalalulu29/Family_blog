@@ -38,11 +38,7 @@ public class PostgresUserDao implements UserDao {
                     pstmt.setTimestamp(5, Timestamp.valueOf(user.getCreatedAt()));
                     pstmt.setInt(6, user.getAge());
 
-                    pstmt.setString(7, user.getName());
-                    pstmt.setString(8, user.getLogin());
-                    pstmt.setString(9, user.getPassword());
-                    pstmt.setTimestamp(10, Timestamp.valueOf(user.getCreatedAt()));
-                    pstmt.setInt(11, user.getAge());
+
 
                     pstmt.executeUpdate();
 
@@ -63,6 +59,11 @@ public class PostgresUserDao implements UserDao {
                     pstmt.setTimestamp(5, Timestamp.valueOf(user.getCreatedAt()));
                     pstmt.setInt(6, user.getAge());
 
+                    pstmt.setString(7, user.getName());
+                    pstmt.setString(8, user.getLogin());
+                    pstmt.setString(9, user.getPassword());
+                    pstmt.setTimestamp(10, Timestamp.valueOf(user.getCreatedAt()));
+                    pstmt.setInt(11, user.getAge());
 //                    pstmt.set
 
                     pstmt.executeUpdate();
