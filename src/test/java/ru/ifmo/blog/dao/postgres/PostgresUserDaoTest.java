@@ -28,6 +28,7 @@ class PostgresUserDaoTest {
     @BeforeAll
     static void init() throws SQLException {
         final AbstractDaoFactory daoFactory = AbstractDaoFactory.getDaoFactory();
+//        daoFactory.connect("192.168.1.211", "test", "kirill", "KArio66540");
         daoFactory.connect("localhost", "ifmo", "ifmo", "q1w2e3");
     }
 
