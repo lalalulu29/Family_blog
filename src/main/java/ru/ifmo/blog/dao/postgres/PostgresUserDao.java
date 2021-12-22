@@ -90,14 +90,14 @@ public class PostgresUserDao implements UserDao {
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next())
-                    return Optional.of(mapCourse(rs));
+                    return Optional.of(mapUsers(rs));
             }
         }
 
         return Optional.empty();
     }
 
-    private User mapCourse(ResultSet rs) throws SQLException {
+    private User mapUsers(ResultSet rs) throws SQLException {
         return new User(
                 rs.getLong(1),
                 rs.getString(2),

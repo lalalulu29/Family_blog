@@ -1,4 +1,4 @@
-package ru.ifmo.blog.dao.postgres;
+package ru.ifmo.blog.dao.mysql;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,9 +13,8 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.fail;
 
-class PostgresUserDaoTest {
+public class MysqlUserDaoTest {
     UserDao userDao;
 
     @BeforeEach
@@ -28,7 +27,7 @@ class PostgresUserDaoTest {
     @BeforeAll
     static void init() throws SQLException {
         final AbstractDaoFactory daoFactory = AbstractDaoFactory.getDaoFactory();
-        daoFactory.connect("localhost", "ifmo", "ifmo", "q1w2e3");
+        daoFactory.connect("192.168.1.211", "test", "kirill", "KArio66540");
     }
 
     @AfterAll
