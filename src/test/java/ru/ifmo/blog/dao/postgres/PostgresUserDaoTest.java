@@ -49,7 +49,8 @@ class PostgresUserDaoTest {
         userDao.save(user);
 
         final Optional<User> actual = userDao.get(1L);
-        assertThat(actual).isNotEqualTo(Optional.of(user));
+        System.out.println(actual);
+        assertThat(actual).isEqualTo(Optional.of(user));
     }
 
 }
